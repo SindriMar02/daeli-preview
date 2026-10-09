@@ -490,8 +490,10 @@ body[data-nav-theme="hero"] .nav-logo img { opacity: 0; visibility: hidden; }
   .awning { display: block; position: sticky; top: -62px; height: 4rem; z-index: 140; background: var(--deep); pointer-events: none; }
   #nav, body[data-nav-theme="bar"] #nav {
     height: 4rem; z-index: 150; color: #fff;
-    background-color: rgba(20,26,29,.88); border-bottom: 1px solid rgba(233,237,236,.12);
-    -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+    /* solid ink, the same as the strip above it: glass over a photo read as
+       a second, lighter band under the clock (the "double header") */
+    background-color: var(--deep); border-bottom: 1px solid rgba(233,237,236,.12);
+    -webkit-backdrop-filter: none; backdrop-filter: none;
     transition: none;
   }
   .nav-contain { display: flex; justify-content: space-between; align-items: center; padding-inline: 1rem .6rem; }
