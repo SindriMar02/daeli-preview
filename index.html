@@ -17,7 +17,7 @@
 <link rel="preload" href="assets/fonts/Supreme-Regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" href="assets/img/plate-valley.webp" fetchpriority="high"
   imagesrcset="assets/img/plate-valley-sm.webp 1100w, assets/img/plate-valley.webp 2200w" imagesizes="100vw">
-<link rel="stylesheet" href="styles.css?v=0a9b7f8c">
+<link rel="stylesheet" href="styles.css?v=7a786c71">
 
 <!-- Every fact on this page is sourced in FACTS.md: daeli.is (home,
      accommodation, horses, contact), their Booking.com listing, and
@@ -138,263 +138,157 @@
 
   <div id="main"></div>
 
-  <!-- ============ 1 · MANIFESTO ============ -->
-  <section class="manifesto" data-nav-section data-nav-theme-val="bar" aria-label="About Dæli">
-    <div class="container-large">
-      <div class="manifesto_layout">
-        <div class="manifesto_col">
-          <div class="manifesto_kicker u-relative">
-            <p class="kicker">Since 1988</p>
-            <svg class="scribble-el" id="scribble" width="191" height="62" viewBox="0 0 191 62" fill="none" aria-hidden="true">
-              <path d="M118.7 58.8C118.3 58.7 117.9 58.6 100.4 49.1 82.9 39.5 48.3 20.5 30.5 10.1 12.6 -0.4 12.5 -1.7 36.1 2.4 59.6 6.6 106.8 16.3 133.8 23 160.7 29.7 166 33.1 169.1 35.3 172.3 37.6 173.1 38.5 173.1 39.5 173.4 45.3 163.9 46.3 149.3 49.1 138.1 51.2 119 52.2 97.3 48.4 75.6 44.6 51.8 35.4 39.7 29.4 27.6 23.5 27.9 21.2 28.4 19.3 29 17.4 29.9 16.1 31.4 14.8 33 13.5 35.3 12.3 43.5 11.3 51.7 10.3 65.8 9.6 82.7 10.7 99.5 11.9 118.7 14.9 135.9 19.1 153.1 23.3 167.8 28.5 176.5 32 185.2 35.4 187.7 36.9 189.1 38.4 190.5 40 190.9 41.4 188.8 43.5 186.7 45.7 182.1 48.4 173.6 51.3 165 54.3 152.6 57.3 123.2 59.1 93.7 60.8 47.7 61 0.3 61.3" stroke="#9AA3A6" stroke-width="0.7" stroke-linecap="round"/>
-            </svg>
+  <!-- ============ 1 · THE HOUSES (Rossar stay grid) ============ -->
+  <section class="r-section r-stays" id="houses" data-nav-section data-nav-theme-val="bar" aria-labelledby="housesTitle">
+    <header class="r-heading">
+      <p class="r-eyebrow">Stay at Dæli</p>
+      <h2 class="r-h2" id="housesTitle" data-lines>A quiet place, with plenty of space.</h2>
+      <p class="r-lede">Four self-catering houses on a family farm in Víðidalur, from a cottage for two to a house for five.</p>
+    </header>
+    <div class="r-stay-grid">
+
+      <article class="r-stay">
+        <a class="r-stay_link" href="#book" data-house="old" aria-label="Ask for dates in the Old Farmhouse">
+          <div class="r-stay_photo">
+            <img src="assets/img/house-old-sm.webp" srcset="assets/img/house-old-sm.webp 1100w, assets/img/house-old.webp 2200w" sizes="(max-width:768px) 92vw, 23vw" width="1100" height="733" alt="The Old Farmhouse at Dæli, white walls under a dark roof" loading="lazy" style="object-position: 38% 50%">
+            <div class="r-stay_detail">
+              <p class="r-stay_kicker">At a glance</p>
+              <ul class="r-stay_facts">
+                <li><strong>2</strong><span>apartments</span></li>
+                <li><strong>2</strong><span>guests each</span></li>
+              </ul>
+              <p class="r-stay_copy">Each with a bedroom, a shower room and a kitchen corner.</p>
+            </div>
           </div>
-          <div class="text-scroll-fade" id="maskDevelop">
-            <h2 class="manifesto_text">We started welcoming guests to Dæli in 1988, and our goal has always been to make every stay special. The farm sits halfway between Reykjavík and Akureyri, six kilometres off Road 1, in a quiet place.</h2>
+          <div class="r-stay_label">
+            <div><p>The old farmhouse</p><h3 translate="no">Old Farmhouse</h3></div>
+            <span class="r-arrow" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M5 15 15 5M7 5h8v8"/></svg><svg viewBox="0 0 20 20"><path d="M5 15 15 5M7 5h8v8"/></svg></span>
           </div>
-          <p class="manifesto_sign">The family at Dæli</p>
-        </div>
-      </div>
+        </a>
+      </article>
+
+      <article class="r-stay">
+        <a class="r-stay_link" href="#book" data-house="eyrin" aria-label="Ask for dates in Eyrin Cottage">
+          <div class="r-stay_photo">
+            <img src="assets/img/house-eyrin.webp" sizes="(max-width:768px) 92vw, 23vw" width="1200" height="900" alt="Eyrin Cottage, a timber cottage with a deck on the green slope" loading="lazy" style="object-position: 45% 55%">
+            <div class="r-stay_detail">
+              <p class="r-stay_kicker">At a glance</p>
+              <ul class="r-stay_facts">
+                <li><strong>2 to 4</strong><span>guests</span></li>
+                <li><strong>1</strong><span>bedroom and a loft</span></li>
+              </ul>
+              <p class="r-stay_copy">A living room with a sofa, and a sleeping loft up a small ladder.</p>
+            </div>
+          </div>
+          <div class="r-stay_label">
+            <div><p>A cottage of its own</p><h3 translate="no">Eyrin Cottage</h3></div>
+            <span class="r-arrow" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M5 15 15 5M7 5h8v8"/></svg><svg viewBox="0 0 20 20"><path d="M5 15 15 5M7 5h8v8"/></svg></span>
+          </div>
+        </a>
+      </article>
+
+      <article class="r-stay">
+        <a class="r-stay_link" href="#book" data-house="fytin" aria-label="Ask for dates in the Fytin Apartments">
+          <div class="r-stay_photo">
+            <img src="assets/img/house-fytin-sm.webp" srcset="assets/img/house-fytin-sm.webp 1100w, assets/img/house-fytin.webp 2200w" sizes="(max-width:768px) 92vw, 23vw" width="1100" height="825" alt="The Fytin Apartments, a yellow timber house in the open field" loading="lazy" style="object-position: 58% 50%">
+            <div class="r-stay_detail">
+              <p class="r-stay_kicker">At a glance</p>
+              <ul class="r-stay_facts">
+                <li><strong>2</strong><span>apartments</span></li>
+                <li><strong>3</strong><span>guests each</span></li>
+              </ul>
+              <p class="r-stay_copy">Each with a bedroom and one bed in a loft up a small ladder.</p>
+            </div>
+          </div>
+          <div class="r-stay_label">
+            <div><p>The yellow house</p><h3 translate="no">Fytin Apartments</h3></div>
+            <span class="r-arrow" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M5 15 15 5M7 5h8v8"/></svg><svg viewBox="0 0 20 20"><path d="M5 15 15 5M7 5h8v8"/></svg></span>
+          </div>
+        </a>
+      </article>
+
+      <article class="r-stay">
+        <a class="r-stay_link" href="#book" data-house="grund" aria-label="Ask for dates in Grund Family House">
+          <div class="r-stay_photo">
+            <img src="assets/img/house-grund.webp" sizes="(max-width:768px) 92vw, 23vw" width="1200" height="675" alt="Grund Family House, white walls and timber among the trees" loading="lazy" style="object-position: 52% 60%">
+            <div class="r-stay_detail">
+              <p class="r-stay_kicker">At a glance</p>
+              <ul class="r-stay_facts">
+                <li><strong>5</strong><span>guests</span></li>
+                <li><strong>2</strong><span>bedrooms</span></li>
+              </ul>
+              <p class="r-stay_copy">Two shower rooms, and a kitchen with a table and chairs for everyone.</p>
+            </div>
+          </div>
+          <div class="r-stay_label">
+            <div><p>The family house</p><h3 translate="no">Grund Family House</h3></div>
+            <span class="r-arrow" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M5 15 15 5M7 5h8v8"/></svg><svg viewBox="0 0 20 20"><path d="M5 15 15 5M7 5h8v8"/></svg></span>
+          </div>
+        </a>
+      </article>
+
+    </div>
+    <div class="r-together">
+      <p class="r-together_title">Room for everyone.</p>
+      <p class="r-together_copy">Nineteen guests in all across the four houses, with a kitchen corner and a shower room in every one.</p>
+      <a class="r-text-link" href="#book">Ask for dates <span aria-hidden="true">&rarr;</span></a>
     </div>
   </section>
 
-  <!-- ============ 2 · THE HOUSES (v1 rail, Rossar sheets) ============ -->
-  <div class="rail_outer" id="houses" data-nav-section data-nav-theme-val="bar">
-    <section class="rail" id="rail" aria-labelledby="railTitle">
-      <div class="rail_wrapper">
-        <div class="rail_backdrops" aria-hidden="true">
-          <div class="rail_backdrop rail_backdrop--deep">
-            <img class="img-fill" src="assets/img/plate-valley.webp"
-              srcset="assets/img/plate-valley-sm.webp 1100w, assets/img/plate-valley.webp 2200w" sizes="100vw" alt="" loading="lazy">
-          </div>
-          <div class="rail_backdrop rail_backdrop--behind" id="railBehind">
-            <img class="img-fill" src="assets/img/room-fytin.webp"
-              srcset="assets/img/room-fytin-sm.webp 1100w, assets/img/room-fytin.webp 2200w" sizes="100vw" alt="" loading="lazy">
-          </div>
-          <div class="rail_backdrop rail_backdrop--clipped" id="railClipped">
-            <img class="img-fill" src="assets/img/plate-aurora.webp"
-              srcset="assets/img/plate-aurora-sm.webp 1100w, assets/img/plate-aurora.webp 2200w" sizes="100vw" alt="" loading="lazy">
-            <svg class="rail_curtain" id="railCurtain" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 100 100" aria-hidden="true">
-              <defs>
-                <clipPath id="curtainClip" clipPathUnits="objectBoundingBox">
-                  <rect x="0" y="0" width="0.3334" height="1"></rect>
-                  <rect x="0.3333" y="0" width="0.3334" height="1"></rect>
-                  <rect x="0.6666" y="0" width="0.3334" height="1"></rect>
-                </clipPath>
-              </defs>
-            </svg>
-          </div>
-          <div class="rail_overlay" id="railOverlay"></div>
-        </div>
-        <div class="rail_container" id="railContainer">
-
-          <div class="rail_panel rail_panel--title">
-            <div class="rail_title-wrap">
-              <h2 class="rail_title" id="railTitle">One farm, four houses</h2>
-            </div>
-          </div>
-
-          <div class="rail_panel">
-            <article class="house-sheet">
-              <figure class="house-sheet_photo">
-                <img src="assets/img/house-old-sm.webp" srcset="assets/img/house-old-sm.webp 1100w, assets/img/house-old.webp 2200w" sizes="(max-width:768px) 92vw, 46vw" width="1100" height="733" alt="The Old Farmhouse at Dæli, white walls under a dark roof" loading="lazy">
-              </figure>
-              <div class="house-sheet_body">
-                <h3 class="house-sheet_name" translate="no">Old Farmhouse</h3>
-                <p class="house-sheet_copy">Two apartments in the old farmhouse, each with a bedroom, a shower room and a kitchen corner.</p>
-                <ul class="house-sheet_facts">
-                  <li><strong>2</strong><span>guests each</span></li>
-                  <li><strong>2</strong><span>apartments</span></li>
-                  <li><strong>1</strong><span>bedroom each</span></li>
-                </ul>
-                <a class="house-sheet_link" href="#book" data-house="old">Ask for dates here <span aria-hidden="true">&rarr;</span></a>
-              </div>
-            </article>
-          </div>
-
-          <div class="rail_panel">
-            <article class="house-sheet">
-              <figure class="house-sheet_photo">
-                <img src="assets/img/house-eyrin.webp" sizes="(max-width:768px) 92vw, 46vw" width="1200" height="900" alt="Eyrin Cottage, a timber cottage with a deck on the green slope" loading="lazy">
-              </figure>
-              <div class="house-sheet_body">
-                <h3 class="house-sheet_name" translate="no">Eyrin Cottage</h3>
-                <p class="house-sheet_copy">A cottage of its own, with a sleeping loft up a small ladder and a living room with a sofa. Quiet, private, and plenty of space.</p>
-                <ul class="house-sheet_facts">
-                  <li><strong>2 to 4</strong><span>guests</span></li>
-                  <li><strong>1</strong><span>bedroom and a loft</span></li>
-                  <li><strong>1</strong><span>shower room</span></li>
-                </ul>
-                <a class="house-sheet_link" href="#book" data-house="eyrin">Ask for dates here <span aria-hidden="true">&rarr;</span></a>
-              </div>
-            </article>
-          </div>
-
-          <div class="rail_panel">
-            <article class="house-sheet">
-              <figure class="house-sheet_photo">
-                <img src="assets/img/house-fytin-sm.webp" srcset="assets/img/house-fytin-sm.webp 1100w, assets/img/house-fytin.webp 2200w" sizes="(max-width:768px) 92vw, 46vw" width="1100" height="825" alt="The Fytin Apartments, a yellow timber house in the open field" loading="lazy">
-              </figure>
-              <div class="house-sheet_body">
-                <h3 class="house-sheet_name" translate="no">Fytin Apartments</h3>
-                <p class="house-sheet_copy">Two apartments in the yellow house, each with a bedroom and one bed in a loft up a small ladder.</p>
-                <ul class="house-sheet_facts">
-                  <li><strong>3</strong><span>guests each</span></li>
-                  <li><strong>2</strong><span>apartments</span></li>
-                  <li><strong>1</strong><span>shower room each</span></li>
-                </ul>
-                <a class="house-sheet_link" href="#book" data-house="fytin">Ask for dates here <span aria-hidden="true">&rarr;</span></a>
-              </div>
-            </article>
-          </div>
-
-          <div class="rail_panel">
-            <article class="house-sheet">
-              <figure class="house-sheet_photo">
-                <img src="assets/img/house-grund.webp" sizes="(max-width:768px) 92vw, 46vw" width="1200" height="675" alt="Grund Family House, white walls and timber among the trees" loading="lazy">
-              </figure>
-              <div class="house-sheet_body">
-                <h3 class="house-sheet_name" translate="no">Grund Family House</h3>
-                <p class="house-sheet_copy">The whole house for up to five: two bedrooms, two shower rooms, and a kitchen with a table and chairs for everyone.</p>
-                <ul class="house-sheet_facts">
-                  <li><strong>5</strong><span>guests</span></li>
-                  <li><strong>2</strong><span>bedrooms</span></li>
-                  <li><strong>2</strong><span>shower rooms</span></li>
-                </ul>
-                <a class="house-sheet_link" href="#book" data-house="grund">Ask for dates here <span aria-hidden="true">&rarr;</span></a>
-              </div>
-            </article>
-          </div>
-
-          <div class="rail_panel rail_panel--full rail_panel--final">
-            <div class="rail_final-scrim" aria-hidden="true"></div>
-            <figure class="rail_quote">
-              <blockquote class="t-quote is-white">&ldquo;The setting was peaceful and my children loved running around outside.&rdquo;</blockquote>
-              <figcaption class="quote-author is-white">Mackenzie, United States, on Booking.com</figcaption>
-              <p class="rail_score"><span class="data-num">8.2</span><span class="data-label">from 86 guest reviews, staff rated 8.7</span></p>
-            </figure>
-          </div>
-
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <!-- ============ 3 · HORSES title ============ -->
-  <section class="title-band" id="horses" data-nav-section data-nav-theme-val="bar">
-    <h2 class="section-title" data-lines>Horses at Dæli</h2>
-    <p class="title-band_sub">Hallfríður, a licensed horse trainer and instructor, trains horses of every age and gives private riding lessons.</p>
-  </section>
-
-  <!-- ============ 4 · CARD-FLICK (v1) ============ -->
-  <section class="flick" data-nav-section data-nav-theme-val="bar" aria-label="Horses at Dæli">
-    <div class="container-large">
-      <div class="card-flick" id="cardFlick">
-
-        <a class="card-flick_item is-active" href="#book">
-          <div class="card-flick_inner">
-            <img class="card-flick_image" src="assets/img/flick-training.webp" width="960" height="639" alt="A rider on a horse at full pace along the track" loading="lazy">
-            <div class="card-flick_shade" aria-hidden="true"></div>
-            <div class="card-flick_content">
-              <h3 class="card-flick_title">Training</h3>
-              <p class="card-flick_meta">Any age, any stage</p>
-              <p class="card-flick_excerpt">From young horses starting out as riding horses to experienced horses getting ready for competition.</p>
-            </div>
-            <p class="card-flick_side" aria-hidden="true">Training</p>
-          </div>
-        </a>
-
-        <a class="card-flick_item" href="#book">
-          <div class="card-flick_inner">
-            <img class="card-flick_image" src="assets/img/flick-lesson.webp" width="960" height="640" alt="A rider in a blue jacket on a black horse, the fells behind" loading="lazy">
-            <div class="card-flick_shade" aria-hidden="true"></div>
-            <div class="card-flick_content">
-              <h3 class="card-flick_title">Riding lessons</h3>
-              <p class="card-flick_meta">Private, at your pace</p>
-              <p class="card-flick_excerpt">Private lessons with Hallfríður, set to each rider’s experience and learning tempo.</p>
-            </div>
-            <p class="card-flick_side" aria-hidden="true">Lessons</p>
-          </div>
-        </a>
-
-        <a class="card-flick_item" href="#book">
-          <div class="card-flick_inner">
-            <img class="card-flick_image" src="assets/img/flick-breeding.webp" width="1100" height="744" alt="A chestnut mare standing over her newborn foal in the grass" loading="lazy">
-            <div class="card-flick_shade" aria-hidden="true"></div>
-            <div class="card-flick_content">
-              <h3 class="card-flick_title">Bred at Dæli</h3>
-              <p class="card-flick_meta">Homebred</p>
-              <p class="card-flick_excerpt">Our breeding is young. The first horses bred here started their training in 2015.</p>
-            </div>
-            <p class="card-flick_side" aria-hidden="true">Breeding</p>
-          </div>
-        </a>
-
-        <a class="card-flick_item" href="#book">
-          <div class="card-flick_inner">
-            <img class="card-flick_image" src="assets/img/flick-foal.webp" width="960" height="640" alt="A woman kneeling in the grass to greet a foal, its mother standing over them" loading="lazy">
-            <div class="card-flick_shade" aria-hidden="true"></div>
-            <div class="card-flick_content">
-              <h3 class="card-flick_title">The basics first</h3>
-              <p class="card-flick_meta">Every horse</p>
-              <p class="card-flick_excerpt">Each horse gets the time it needs, because the basic work keeps it motivated, trusting and happy.</p>
-            </div>
-            <p class="card-flick_side" aria-hidden="true">Basics</p>
-          </div>
-        </a>
-
-        <a class="card-flick_item" href="#book">
-          <div class="card-flick_inner">
-            <img class="card-flick_image" src="assets/img/flick-winter.webp" width="960" height="640" alt="A rider in silhouette at a gallop across snow" loading="lazy">
-            <div class="card-flick_shade" aria-hidden="true"></div>
-            <div class="card-flick_content">
-              <h3 class="card-flick_title">For centuries</h3>
-              <p class="card-flick_meta">Víðidalur</p>
-              <p class="card-flick_excerpt">There have been horses and many other animals at Dæli for centuries.</p>
-            </div>
-            <p class="card-flick_side" aria-hidden="true">Centuries</p>
-          </div>
-        </a>
-
-      </div>
+  <!-- ============ 2 · OUR STORY (Rossar collage) ============ -->
+  <section class="r-section r-story" id="family" data-nav-section data-nav-theme-val="bar" aria-labelledby="storyTitle">
+    <div class="r-story_images">
+      <figure class="r-story_main" data-unclip>
+        <img src="assets/img/flick-breeding.webp" width="1100" height="744" alt="A chestnut mare standing over her newborn foal in the grass" loading="lazy">
+      </figure>
+      <figure class="r-story_small" data-unclip>
+        <img src="assets/img/vitrine-haffi.webp" width="717" height="524" alt="A rider in a red jacket beside a black horse" loading="lazy">
+      </figure>
+    </div>
+    <div class="r-story_copy">
+      <p class="r-eyebrow">Our family’s place</p>
+      <h2 class="r-h2" id="storyTitle" data-lines>Welcoming guests since 1988.</h2>
+      <p>We started welcoming guests to Dæli in 1988, and our goal has always been to make every stay special.</p>
+      <p>Kiddi and Haffi run the farm with their son Bolli and their daughter Þórhildur, and a team of helping hands. Everyone here speaks English as well as Icelandic.</p>
+      <a class="r-text-link" href="#horses">The horses at Dæli <span aria-hidden="true">&rarr;</span></a>
     </div>
   </section>
 
-  <!-- ============ 5 · THE FAMILY (Rossar story collage) ============ -->
-  <section class="story" id="family" data-nav-section data-nav-theme-val="bar">
-    <div class="container-large story_layout">
-      <div class="story_images">
-        <figure class="story_main" data-unclip>
-          <img src="assets/img/family-haffi.webp" width="717" height="428" alt="A rider lying on her horse as it rests in the grass" loading="lazy">
-        </figure>
-        <figure class="story_side" data-unclip>
-          <img src="assets/img/vitrine-haffi.webp" width="717" height="524" alt="A rider in a red jacket beside a black horse" loading="lazy">
-        </figure>
-      </div>
-      <div class="story_text">
-        <h2 class="h2-display" data-lines>The family</h2>
-        <p class="story_body">Kiddi and Haffi run Dæli with their son Bolli and their daughter Þórhildur, and a team of helping hands.</p>
-        <p class="story_body">Everyone here speaks English as well as Icelandic, and some speak other languages too.</p>
-        <dl class="story_facts">
-          <div><dt>Welcoming guests</dt><dd>Since 1988</dd></div>
-          <div><dt>Languages</dt><dd>English, Icelandic</dd></div>
-          <div><dt>Staff, on Booking.com</dt><dd>8.7</dd></div>
-        </dl>
-      </div>
+  <!-- a framed landscape (the Rossar north star) -->
+  <figure class="r-frame" data-nav-section data-nav-theme-val="bar">
+    <div class="r-frame_inner" data-frame>
+      <img src="assets/img/plate-aurora-sm.webp" srcset="assets/img/plate-aurora-sm.webp 1100w, assets/img/plate-aurora.webp 2200w" sizes="90vw" width="2200" height="1461" alt="Northern lights over a dark field, someone sitting in the grass to watch" loading="lazy">
+    </div>
+  </figure>
+
+  <!-- ============ 3 · HORSES (Rossar feature row) ============ -->
+  <section class="r-section r-feature" id="horses" data-nav-section data-nav-theme-val="bar" aria-labelledby="horsesTitle">
+    <div class="r-feature_copy">
+      <h2 class="r-h2" id="horsesTitle" data-lines>Horses at Dæli</h2>
+      <p class="r-lede">Hallfríður, a licensed horse trainer and instructor, trains horses of every age and gives private riding lessons.</p>
+      <dl class="r-list">
+        <div><dt>Training</dt><dd>From young horses starting out as riding horses to experienced horses getting ready for competition.</dd></div>
+        <div><dt>Riding lessons</dt><dd>Private lessons, set to each rider’s experience and learning tempo.</dd></div>
+        <div><dt>Bred at Dæli</dt><dd>The breeding is young: the first horses bred here started their training in 2015.</dd></div>
+      </dl>
+    </div>
+    <div class="r-feature_images">
+      <figure class="r-feature_a" data-unclip>
+        <img src="assets/img/flick-training.webp" width="960" height="639" alt="A rider on a horse at full pace along the track" loading="lazy">
+      </figure>
+      <figure class="r-feature_b" data-unclip>
+        <img src="assets/img/flick-lesson.webp" width="960" height="640" alt="A rider in a blue jacket on a black horse, the fells behind" loading="lazy">
+      </figure>
     </div>
   </section>
 
-  <!-- ============ 6 · THE ROAD (v1 journey, real OSM geometry) ============ -->
-  <section class="journey" id="road" data-nav-section data-nav-theme-val="bar">
-    <div class="journey_head container-large">
-      <p class="coord is-faded">N65 24.872 W20 37.389<br>Road 1</p>
-      <div class="journey_head-center">
-        <h2 class="h2-display" data-lines>Six kilometres off Road 1</h2>
-        <p class="t-body is-faded">Turn south off the Ring Road onto Víðidalsvegur, road 715, and follow it up the valley to the farm.</p>
-      </div>
-      <p class="coord is-faded t-right">N65 21.703 W20 36.127<br>Dæli</p>
-    </div>
-    <p class="journey_code" aria-hidden="true" translate="no">6<span class="journey_code-div"></span>KM</p>
+  <!-- ============ 4 · THE ROAD (v1 journey, real OSM geometry) ============ -->
+  <section class="r-section journey" id="road" data-nav-section data-nav-theme-val="bar" aria-labelledby="roadTitle">
+    <header class="r-heading">
+      <p class="r-eyebrow">Getting here</p>
+      <h2 class="r-h2" id="roadTitle" data-lines>Six kilometres off Road 1.</h2>
+      <p class="r-lede">Turn south off the Ring Road onto Víðidalsvegur, road 715, and follow it up the valley to the farm.</p>
+    </header>
     <div class="journey_map-outer">
       <div class="journey_thread" id="journeyThread">
         <!-- The road below is OSRM's driving geometry from OpenStreetMap,
@@ -456,175 +350,147 @@
     </div>
   </section>
 
-  <!-- ============ 7 · IN EVERY HOUSE ============ -->
-  <section class="comforts" id="comforts" data-nav-section data-nav-theme-val="bar">
-    <div class="container-large">
-      <header class="comforts_head">
-        <h2 class="h2-display" data-lines>In every house</h2>
-        <p class="comforts_intro">Every house is self-catering, with its own kitchen corner and its own shower room.</p>
-      </header>
-      <div class="comforts_strip" id="comfortsStrip">
-        <figure class="comforts_plate is-wide">
-          <img src="assets/img/room-fytin-sm.webp" srcset="assets/img/room-fytin-sm.webp 1100w, assets/img/room-fytin.webp 2200w" sizes="(max-width:768px) 92vw, 48vw" width="1100" height="825" alt="A Fytin bedroom, the ladder climbing to the loft bed" loading="lazy">
-          <figcaption>Fytin Apartments</figcaption>
-        </figure>
-        <figure class="comforts_plate">
-          <img src="assets/img/room-eyrin.webp" width="717" height="478" alt="The living room in Eyrin Cottage, a sofa under the window" loading="lazy">
-          <figcaption>Eyrin Cottage</figcaption>
-        </figure>
-        <figure class="comforts_plate">
-          <img src="assets/img/room-grund.webp" width="717" height="479" alt="A twin bedroom in Grund Family House" loading="lazy">
-          <figcaption>Grund Family House</figcaption>
-        </figure>
-      </div>
-      <div class="comforts_lists">
-        <div class="comforts_group">
-          <h3 class="comforts_label">In the house</h3>
-          <ul>
-            <li>Kitchen corner with a fridge</li>
-            <li>Private shower room</li>
-            <li>Flat-screen TV</li>
-            <li>Free WiFi</li>
-            <li>Garden and river views</li>
-          </ul>
+  <!-- ============ 5 · IN EVERY HOUSE (Rossar feature row, mirrored) ============ -->
+  <section class="r-section r-feature is-mirrored" id="comforts" data-nav-section data-nav-theme-val="bar" aria-labelledby="comfortsTitle">
+    <div class="r-feature_images">
+      <figure class="r-feature_a" data-unclip>
+        <img src="assets/img/room-fytin-sm.webp" srcset="assets/img/room-fytin-sm.webp 1100w, assets/img/room-fytin.webp 2200w" sizes="(max-width:768px) 92vw, 30vw" width="1100" height="825" alt="A Fytin bedroom, the ladder climbing to the loft bed" loading="lazy">
+        <figcaption>Fytin Apartments</figcaption>
+      </figure>
+      <figure class="r-feature_b" data-unclip>
+        <img src="assets/img/room-eyrin.webp" width="717" height="478" alt="The living room in Eyrin Cottage, a sofa under the window" loading="lazy">
+        <figcaption>Eyrin Cottage</figcaption>
+      </figure>
+    </div>
+    <div class="r-feature_copy">
+      <h2 class="r-h2" id="comfortsTitle" data-lines>In every house</h2>
+      <p class="r-lede">Every house is self-catering, with its own kitchen corner and its own shower room.</p>
+      <ul class="r-plain">
+        <li>Kitchen corner with a fridge</li>
+        <li>Free WiFi and a flat-screen TV</li>
+        <li>Garden and river views</li>
+        <li>Free parking at the houses</li>
+        <li>A cot on request, free for children under three</li>
+        <li>Check-in 15:00 to 22:00, check-out by 11:00</li>
+        <li>No pets, and no smoking</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 6 · ASK FOR YOUR DATES (Rossar enquiry) ============ -->
+  <section class="r-section r-enquire book" id="book" data-nav-section data-nav-theme-val="bar" aria-labelledby="bookTitle">
+    <div class="r-enquire_copy">
+      <p class="r-eyebrow">Ask for your dates</p>
+      <h2 class="r-h2" id="bookTitle" data-lines>It starts with a short message.</h2>
+      <p class="r-lede">Pick a house and your dates and send the request to the family. Nothing is charged at this step.</p>
+      <figure class="r-review">
+        <p class="r-review_score"><span class="data-num">8.2</span><span>from 86 guest reviews on Booking.com, staff rated 8.7</span></p>
+        <blockquote>&ldquo;The setting was peaceful and my children loved running around outside.&rdquo;</blockquote>
+        <figcaption>Mackenzie, United States</figcaption>
+      </figure>
+      <a class="r-text-link" href="tel:+3544512566">+354 451 2566</a>
+      <a class="r-text-link" href="mailto:daeli@daeli.is">daeli@daeli.is</a>
+    </div>
+    <div class="r-enquire_form">
+      <form class="book_form" id="bookForm" novalidate>
+        <div class="r-field">
+          <label for="bkHouse">The house</label>
+          <select id="bkHouse" name="house">
+            <option value="old">Old Farmhouse, 2 guests</option>
+            <option value="eyrin">Eyrin Cottage, 2 to 4 guests</option>
+            <option value="fytin">Fytin Apartments, 3 guests</option>
+            <option value="grund">Grund Family House, 5 guests</option>
+          </select>
         </div>
-        <div class="comforts_group">
-          <h3 class="comforts_label">Good to know</h3>
-          <ul>
-            <li>Free parking at the houses</li>
-            <li>A cot on request, free for children under three</li>
-            <li>Check-in 15:00 to 22:00, check-out by 11:00</li>
-            <li>No pets, and no smoking</li>
-          </ul>
+        <!-- THE STAY PICKER (ported from the Eyvindarholt build): past nights
+             blocked, a range may not cross a booked night, a booked night is
+             still a legal checkout, hover preview for a real mouse only, and
+             the undo rule. Dates leave in the hidden inputs. -->
+        <fieldset class="book_stay">
+          <legend class="r-label">Your dates</legend>
+          <div class="stay" id="stayPicker">
+            <div class="stay_head">
+              <button type="button" class="stay_nav" id="stayPrev" aria-label="Previous month"><span aria-hidden="true">&larr;</span></button>
+              <p class="stay_live" id="stayLive" aria-live="polite"></p>
+              <button type="button" class="stay_nav" id="stayNext" aria-label="Next month"><span aria-hidden="true">&rarr;</span></button>
+            </div>
+            <div class="stay_grids" id="stayGrids"></div>
+            <p class="stay_note" id="stayNote" role="status" hidden></p>
+            <div class="stay_read">
+              <div class="stay_box"><span class="stay_box-label">Arrive</span><strong class="stay_box-val" id="stayIn">Pick a night</strong></div>
+              <div class="stay_box"><span class="stay_box-label">Leave</span><strong class="stay_box-val" id="stayOut">Pick a morning</strong></div>
+              <p class="stay_nights" id="stayNights"></p>
+              <button type="button" class="stay_clear" id="stayClear" hidden>Clear dates</button>
+            </div>
+            <p class="stay_src" id="staySrc"></p>
+          </div>
+          <input type="hidden" id="bkArrive" name="arrival">
+          <input type="hidden" id="bkDepart" name="departure">
+          <p class="book_err" id="errArrive" hidden>Pick the night you arrive and the morning you leave.</p>
+        </fieldset>
+        <div class="r-form-grid">
+          <div class="r-field">
+            <label for="bkGuests">Guests</label>
+            <input id="bkGuests" name="guests" type="number" min="1" max="2" inputmode="numeric" required>
+            <p class="book_err" id="errGuests" hidden>How many of you, 1 to 2?</p>
+          </div>
+          <div class="r-field">
+            <label for="bkName">Your name</label>
+            <input id="bkName" name="name" type="text" autocomplete="name" required>
+            <p class="book_err" id="errName" hidden>Tell the family your name.</p>
+          </div>
+          <div class="r-field">
+            <label for="bkPhone">Phone</label>
+            <input id="bkPhone" name="phone" type="tel" autocomplete="tel" required>
+            <p class="book_err" id="errPhone" hidden>A phone number, so the family can reach you.</p>
+          </div>
+          <div class="r-field">
+            <label for="bkEmail">Email address</label>
+            <input id="bkEmail" name="email" type="email" autocomplete="email" spellcheck="false" required>
+            <p class="book_err" id="errEmail" hidden>That email does not look complete.</p>
+          </div>
+          <div class="r-field is-wide">
+            <label for="bkMsg">Anything else <span>(optional)</span></label>
+            <textarea id="bkMsg" name="message" rows="3" placeholder="A riding lesson, a late arrival, a cot…"></textarea>
+          </div>
         </div>
+        <div class="r-form-bottom">
+          <p id="bookNote">The request goes to the family. Nothing is charged now.</p>
+          <button class="r-text-link r-submit" id="bkSubmit" type="submit">Send the request</button>
+        </div>
+        <p class="book_err book_err--form" id="errForm" role="alert" hidden></p>
+      </form>
+      <div class="book_done" id="bookDone" role="status" aria-live="polite" tabindex="-1" hidden>
+        <p class="book_done-title">Request sent</p>
+        <p class="book_done-body">Thank you. The request is with the family. Nothing is charged now.</p>
+        <p class="book_done-ref coord">Reference <span id="bookRef"></span></p>
       </div>
     </div>
   </section>
 
-  <!-- ============ 8 · ASK FOR YOUR DATES ============ -->
-  <section class="book" id="book" data-nav-section data-nav-theme-val="bar">
-    <div class="container-large">
-      <div class="book_layout">
-        <div class="book_text">
-          <h2 class="h2-display" data-lines>Ask for your dates</h2>
-          <p class="book_body">Pick a house and your dates and send the request to the family. Nothing is charged at this step.</p>
-          <ul class="book_points">
-            <li><span class="data-num">19 guests</span><span class="data-label">across the four houses, by their own listing</span></li>
-            <li><span class="data-num">No card</span><span class="data-label">a request, not a charge</span></li>
-          </ul>
-        </div>
-        <form class="book_form" id="bookForm" novalidate>
-          <fieldset class="book_houses">
-            <legend class="book_label">The house</legend>
-            <div class="book_choices">
-              <label class="book_choice"><input type="radio" name="house" value="old" checked><span>Old Farmhouse<em>2 guests</em></span></label>
-              <label class="book_choice"><input type="radio" name="house" value="eyrin"><span>Eyrin Cottage<em>2 to 4 guests</em></span></label>
-              <label class="book_choice"><input type="radio" name="house" value="fytin"><span>Fytin Apartments<em>3 guests</em></span></label>
-              <label class="book_choice"><input type="radio" name="house" value="grund"><span>Grund Family House<em>5 guests</em></span></label>
-            </div>
-          </fieldset>
-          <!-- THE STAY PICKER (ported from the Eyvindarholt build): past nights
-               blocked, a range may not cross a booked night, a booked night is
-               still a legal checkout, hover preview for a real mouse only, and
-               the undo rule. Dates leave in the hidden inputs. -->
-          <fieldset class="book_stay">
-            <legend class="book_label">Your dates</legend>
-            <div class="stay" id="stayPicker">
-              <div class="stay_head">
-                <button type="button" class="stay_nav" id="stayPrev" aria-label="Previous month"><span aria-hidden="true">&larr;</span></button>
-                <p class="stay_live" id="stayLive" aria-live="polite"></p>
-                <button type="button" class="stay_nav" id="stayNext" aria-label="Next month"><span aria-hidden="true">&rarr;</span></button>
-              </div>
-              <div class="stay_grids" id="stayGrids"></div>
-              <p class="stay_note" id="stayNote" role="status" hidden></p>
-              <div class="stay_read">
-                <div class="stay_box"><span class="stay_box-label">Arrive</span><strong class="stay_box-val" id="stayIn">Pick a night</strong></div>
-                <div class="stay_box"><span class="stay_box-label">Leave</span><strong class="stay_box-val" id="stayOut">Pick a morning</strong></div>
-                <p class="stay_nights" id="stayNights"></p>
-                <button type="button" class="stay_clear" id="stayClear" hidden>Clear dates</button>
-              </div>
-              <p class="stay_src" id="staySrc"></p>
-            </div>
-            <input type="hidden" id="bkArrive" name="arrival">
-            <input type="hidden" id="bkDepart" name="departure">
-            <p class="book_err" id="errArrive" hidden>Pick the night you arrive and the morning you leave.</p>
-          </fieldset>
-          <div class="book_grid">
-            <div class="book_field">
-              <label class="book_label" for="bkGuests">Guests</label>
-              <input class="book_input" id="bkGuests" name="guests" type="number" min="1" max="2" inputmode="numeric" required>
-              <p class="book_err" id="errGuests" hidden>How many of you, 1 to 2?</p>
-            </div>
-            <div class="book_field">
-              <label class="book_label" for="bkName">Name</label>
-              <input class="book_input" id="bkName" name="name" type="text" autocomplete="name" required>
-              <p class="book_err" id="errName" hidden>Tell the family your name.</p>
-            </div>
-            <div class="book_field">
-              <label class="book_label" for="bkPhone">Phone</label>
-              <input class="book_input" id="bkPhone" name="phone" type="tel" autocomplete="tel" required>
-              <p class="book_err" id="errPhone" hidden>A phone number, so the family can reach you.</p>
-            </div>
-            <div class="book_field">
-              <label class="book_label" for="bkEmail">Email</label>
-              <input class="book_input" id="bkEmail" name="email" type="email" autocomplete="email" spellcheck="false" required>
-              <p class="book_err" id="errEmail" hidden>That email does not look complete.</p>
-            </div>
-            <div class="book_field is-wide">
-              <label class="book_label" for="bkMsg">Anything else <span class="book_optional">optional</span></label>
-              <textarea class="book_input book_area" id="bkMsg" name="message" rows="3" placeholder="A riding lesson, a late arrival, a cot…"></textarea>
-            </div>
-          </div>
-          <div class="book_actions">
-            <button class="btn btn--accent book_submit" id="bkSubmit" type="submit">Send the request</button>
-            <p class="book_note" id="bookNote">The request goes to the family. Nothing is charged now.</p>
-          </div>
-          <p class="book_err book_err--form" id="errForm" role="alert" hidden></p>
-        </form>
-        <div class="book_done" id="bookDone" role="status" aria-live="polite" tabindex="-1" hidden>
-          <p class="book_done-title">Request sent</p>
-          <p class="book_done-body">Thank you. The request is with the family. Nothing is charged now.</p>
-          <p class="book_done-ref coord">Reference <span id="bookRef"></span></p>
-        </div>
-      </div>
+  <!-- ============ 7 · FOOTER (Rossar, light) ============ -->
+  <footer class="r-footer" id="contact" data-nav-section data-nav-theme-val="bar">
+    <div class="r-footer_main">
+      <a href="#top" aria-label="Dæli, back to the top"><img src="assets/img/logo-daeli.png" width="147" height="148" alt="Dæli" class="r-footer_logo"></a>
+      <p>Dæli, 531 Víðidalstunga<br>Húnaþing vestra, Iceland</p>
+      <p><a href="tel:+3544512566">+354 451 2566</a><br><a href="mailto:daeli@daeli.is">daeli@daeli.is</a></p>
+      <nav aria-label="Footer">
+        <a href="#houses">The houses</a>
+        <a href="#family">Our story</a>
+        <a href="#horses">Horses</a>
+        <a href="#road">Getting here</a>
+        <a href="https://www.facebook.com/Fer%C3%B0a%C3%BEj%C3%B3nustan-D%C3%A6li-213728541991397/" rel="noopener" target="_blank">Facebook</a>
+        <a href="https://www.facebook.com/daelishestar/" rel="noopener" target="_blank">Dæli horses</a>
+        <a href="https://www.booking.com/hotel/is/daeli-holiday-farm.html" rel="noopener" target="_blank">Booking.com</a>
+      </nav>
     </div>
-  </section>
-
-  <!-- ============ 9 · FOOTER ============ -->
-  <footer class="footer" id="contact" data-nav-section data-nav-theme-val="bar">
-    <div class="container-large">
-      <div class="footer_head">
-        <h2 class="footer_title">Come up the valley</h2>
-        <p class="footer_sub">Write or call, and the family will help you plan your stay.</p>
-      </div>
-      <div class="footer_grid">
-        <div class="footer_col">
-          <p class="footer_label">Talk to us</p>
-          <a class="footer_big" href="tel:+3544512566">+354 451 2566</a>
-          <a class="footer_big" href="mailto:daeli@daeli.is">daeli@daeli.is</a>
-        </div>
-        <div class="footer_col">
-          <p class="footer_label">Find us</p>
-          <p class="footer_text">Dæli, 531 Víðidalstunga<br>Húnaþing vestra, Iceland</p>
-          <p class="footer_text is-faded">N65 21.703 W20 36.127</p>
-        </div>
-        <div class="footer_col">
-          <p class="footer_label">The farm</p>
-          <p class="footer_text">Four self-catering houses and the horses, six kilometres off Road 1, halfway between Reykjavík and Akureyri.</p>
-        </div>
-      </div>
-      <div class="footer_base">
-        <div class="footer_links">
-          <a href="https://www.facebook.com/Fer%C3%B0a%C3%BEj%C3%B3nustan-D%C3%A6li-213728541991397/" rel="noopener" target="_blank">Facebook</a>
-          <a href="https://www.facebook.com/daelishestar/" rel="noopener" target="_blank">Dæli horses on Facebook</a>
-          <a href="https://www.booking.com/hotel/is/daeli-holiday-farm.html" rel="noopener" target="_blank">Booking.com</a>
-        </div>
-        <p class="footer_credit">Designed by
-          <a class="sndr" href="https://sndrstudio.is" target="_blank" rel="noopener"
-             aria-label="Designed by SNDR Studio" data-logotype><span class="sndr__mark">SN<i>✦</i>DR</span><span class="sndr__studio">STUDIO</span></a>
-        </p>
-        <p class="footer_detail">Design proposal, not the live site</p>
-      </div>
+    <div class="r-footer_base">
+      <span>N65 21.703 W20 36.127</span>
+      <span>Design proposal, not the live site</span>
+      <p class="r-footer_credit">Designed by
+        <a class="sndr" href="https://sndrstudio.is" target="_blank" rel="noopener"
+           aria-label="Designed by SNDR Studio" data-logotype><span class="sndr__mark">SN<i>✦</i>DR</span><span class="sndr__studio">STUDIO</span></a>
+      </p>
     </div>
   </footer>
 
@@ -633,6 +499,6 @@
 <script src="assets/vendor/gsap.min.js"></script>
 <script src="assets/vendor/ScrollTrigger.min.js"></script>
 <script src="assets/vendor/lenis.min.js"></script>
-<script src="app.js?v=8ad4f784"></script>
+<script src="app.js?v=fa78531b"></script>
 </body>
 </html>

@@ -1,7 +1,8 @@
-/* Dæli · Kleif hybrid
-   v1 engine (../kleif: White Desert transplant) with the Eyvindarholt fixes
-   (rail title grows as a compositor scale everywhere; the stay picker) and
-   Rossar's position-tied line reveals. Vanilla + GSAP ScrollTrigger + Lenis
+/* Dæli · Kleif hybrid, Rossar-led (round 2, 2026-10-09)
+   The hero and the drawn road come from v1 (../kleif, White Desert engine);
+   every other section from Rossar (../kleif-rossar): stay grid, story
+   collage, framed landscape, feature rows, underline enquiry. The stay
+   picker comes from the Eyvindarholt build. Vanilla + GSAP ScrollTrigger + Lenis
    (DESKTOP ONLY: Lenis never mounts on touch, it breaks iOS chrome).
    One writer per element. Mobile chrome: constant bar + awning, zero motion. */
 (function () {
@@ -85,7 +86,7 @@
   var API = window.DAELI_API || null;
   var CONTACT = 'Call +354 451 2566 or write to daeli@daeli.is.';
 
-  function houseId() { var r = form.querySelector('input[name="house"]:checked'); return r ? r.value : 'old'; }
+  function houseId() { return $('bkHouse').value || 'old'; }
   function syncHouse() {
     var max = SLEEPS[houseId()];
     $('bkGuests').max = String(max);
@@ -95,8 +96,8 @@
   /* "Ask for dates here" on a house sheet preselects that house */
   document.querySelectorAll('[data-house]').forEach(function (a) {
     a.addEventListener('click', function () {
-      var r = form.querySelector('input[name="house"][value="' + a.getAttribute('data-house') + '"]');
-      if (r) { r.checked = true; syncHouse(); }
+      $('bkHouse').value = a.getAttribute('data-house');
+      syncHouse(); stay.render(); stay.load(guestCount() || 1);
     });
   });
 
@@ -247,9 +248,7 @@
   })();
   window.__stay = stay; /* probe hook for QA */
 
-  form.querySelectorAll('input[name="house"]').forEach(function (r) {
-    r.addEventListener('change', function () { syncHouse(); stay.render(); stay.load(guestCount() || 1); });
-  });
+  $('bkHouse').addEventListener('change', function () { syncHouse(); stay.render(); stay.load(guestCount() || 1); });
   syncHouse();
   /* the whole value, so 2.9 is refused rather than read as 2 */
   function guestCount() { var v = $('bkGuests').value.trim(); return /^\d+$/.test(v) ? Number(v) : NaN; }
@@ -441,21 +440,6 @@
     gsap.to(el, { y: function () { return -0.45 * vh(); }, ease: 'none', scrollTrigger: heroST() });
   });
 
-  /* ---------- manifesto: mask develop + scribble ---------- */
-  var maskEl = $('maskDevelop');
-  gsap.set(maskEl, { '--mask-position': -40 });
-  gsap.to(maskEl, {
-    '--mask-position': 100, ease: 'none',
-    scrollTrigger: { trigger: maskEl, start: 'top 80%', end: 'bottom 60%', scrub: SCRUB, refreshPriority: 9 }
-  });
-  var scribblePath = document.querySelector('#scribble path');
-  var len = scribblePath.getTotalLength();
-  gsap.set(scribblePath, { strokeDasharray: len, strokeDashoffset: len });
-  gsap.to(scribblePath, {
-    strokeDashoffset: 0, duration: 1.2, ease: 'power2.inOut',
-    scrollTrigger: { trigger: '.manifesto_kicker', start: 'top 80%', toggleActions: 'play none none reverse' }
-  });
-
   /* ---------- Rossar line reveal, tied to POSITION (a short scrub band),
      so a fast scroll can never outrun it ---------- */
   document.querySelectorAll('[data-lines]').forEach(function (h) {
@@ -471,138 +455,25 @@
 
   var mm = gsap.matchMedia();
 
-  /* ---------- frames unclip (desktop) ---------- */
+  /* ---------- Rossar curtain reveals: each frame unclips from its foot as it
+     arrives, tied to its own position (desktop; phones get the plain frame) ---------- */
   mm.add('(min-width: 769px)', function () {
-    document.querySelectorAll('[data-unclip]').forEach(function (el, i) {
-      gsap.fromTo(el, { clipPath: 'inset(0% 0% 20% 0% round 0.3rem)' }, {
+    document.querySelectorAll('[data-unclip]').forEach(function (el) {
+      gsap.fromTo(el, { clipPath: 'inset(0% 0% 16% 0% round 0.3rem)' }, {
         clipPath: 'inset(0% 0% 0% 0% round 0.3rem)', ease: 'none',
-        scrollTrigger: { trigger: '.story_images', start: 'top 85%', end: 'top ' + (45 - i * 8) + '%', scrub: SCRUB }
+        scrollTrigger: { trigger: el, start: 'top 92%', end: 'top 55%', scrub: SCRUB }
       });
     });
-    document.querySelectorAll('#comfortsStrip .comforts_plate img').forEach(function (el, i) {
-      gsap.fromTo(el, { clipPath: 'inset(0% 0% 22% 0% round 0.3rem)' }, {
-        clipPath: 'inset(0% 0% 0% 0% round 0.3rem)', ease: 'none',
-        scrollTrigger: { trigger: '#comfortsStrip', start: 'top 85%', end: 'top ' + (50 - i * 6) + '%', scrub: SCRUB }
-      });
+    var frame = document.querySelector('[data-frame]');
+    gsap.fromTo(frame, { clipPath: 'inset(0% 6% 0% 6% round 0.3rem)' }, {
+      clipPath: 'inset(0% 0% 0% 0% round 0.3rem)', ease: 'none',
+      scrollTrigger: { trigger: frame, start: 'top 90%', end: 'top 35%', scrub: SCRUB }
     });
-  });
-
-  /* ---------- card-flick: hover accordion (desktop) ---------- */
-  mm.add('(min-width: 769px)', function () {
-    var items = Array.prototype.slice.call($('cardFlick').querySelectorAll('.card-flick_item'));
-    var GROW_ACTIVE = items.length - 1, GROW_REST = 1;
-    var current = 0, tl = null;
-    items.forEach(function (item, i) {
-      gsap.set(item, { flexGrow: i === 0 ? GROW_ACTIVE : GROW_REST });
-      gsap.set(item.querySelector('.card-flick_content'), { opacity: i === 0 ? 1 : 0 });
-    });
-    function activate(idx) {
-      if (idx === current) return;
-      current = idx;
-      if (tl) tl.kill();
-      tl = gsap.timeline();
-      items.forEach(function (item, i) {
-        var on = i === idx;
-        item.classList.toggle('is-active', on);
-        tl.to(item, { flexGrow: on ? GROW_ACTIVE : GROW_REST, duration: 0.75, ease: 'expo' }, 0);
-        tl.to(item.querySelector('.card-flick_content'), { opacity: on ? 1 : 0, duration: on ? 0.75 : 0.2, ease: on ? 'power1.out' : 'expo.out' }, 0);
-      });
-    }
-    var handlers = items.map(function (item, i) {
-      var f = function () { activate(i); };
-      item.addEventListener('mouseenter', f);
-      item.addEventListener('focusin', f);
-      return f;
-    });
-    return function () {
-      if (tl) tl.kill();
-      items.forEach(function (item, i) {
-        item.removeEventListener('mouseenter', handlers[i]);
-        item.removeEventListener('focusin', handlers[i]);
-        gsap.set(item, { clearProps: 'flexGrow' });
-        gsap.set(item.querySelector('.card-flick_content'), { clearProps: 'opacity' });
-      });
-    };
-  });
-
-  /* ---------- THE RAIL (v1, hold shortened per the no-empty-scroll rule) ---------- */
-  var railOuter = document.querySelector('.rail_outer');
-  var rail = $('rail');
-  var railContainer = $('railContainer');
-  var railTitleWrap = document.querySelector('.rail_title-wrap');
-  var railTitle = $('railTitle');
-  var railBehind = $('railBehind');
-  var railOverlay = $('railOverlay');
-  var curtainRects = Array.prototype.slice.call(document.querySelectorAll('#curtainClip rect'));
-  var railTravel = function () { return railContainer.scrollWidth - window.innerWidth; };
-
-  mm.add('(min-width: 769px)', function () {
-    gsap.fromTo(railOuter, { clipPath: 'inset(0% 10% 0% 10%)' }, {
-      clipPath: 'inset(0% 0% 0% 0%)', ease: 'none', clearProps: 'clipPath',
-      scrollTrigger: { trigger: railOuter, start: 'top bottom', end: 'top top', scrub: SCRUB, refreshPriority: 6 }
-    });
-  });
-  /* the title grows as a compositor-only SCALE on every device, rasterised at
-     its largest size so it only ever scales down (Eyvindarholt fix) */
-  var railType = function () {
-    return isDesktop() ? { enter: 3, grown: 6, settled: 4.25 } : { enter: 2, grown: 3, settled: 2.6 };
-  };
-  var railGrow = null;
-  function buildRailGrow() {
-    if (railGrow) { railGrow.scrollTrigger && railGrow.scrollTrigger.kill(); railGrow.kill(); }
-    var t = railType();
-    gsap.set(railTitle, { fontSize: t.grown + 'rem', transformOrigin: '50% 50%' });
-    railGrow = gsap.fromTo(railTitle, { scale: t.enter / t.grown }, {
+    gsap.fromTo(frame.querySelector('img'), { scale: 1.12 }, {
       scale: 1, ease: 'none',
-      scrollTrigger: { trigger: railOuter, start: 'top bottom', end: 'top top', scrub: SCRUB, refreshPriority: 6 }
+      scrollTrigger: { trigger: frame, start: 'top bottom', end: 'bottom top', scrub: SCRUB }
     });
-  }
-  buildRailGrow();
-  gsap.fromTo(railBehind, { yPercent: 18 }, {
-    yPercent: 0, ease: 'none',
-    scrollTrigger: { trigger: railOuter, start: 'top 60%', end: 'top top', scrub: SCRUB, refreshPriority: 6 }
   });
-
-  var railTl = null;
-  function buildRail() {
-    if (railTl) {
-      railTl.scrollTrigger && railTl.scrollTrigger.kill();
-      railTl.kill();
-      gsap.set([railContainer, railTitleWrap], { clearProps: 'x,opacity' });
-      gsap.set(railBehind, { clearProps: 'clipPath' });
-      gsap.set(railOverlay, { opacity: 0.12 });
-      curtainRects.forEach(function (r, i) { r.setAttribute('width', '0.3334'); r.setAttribute('x', String(i * 0.3333)); });
-      gsap.set(railTitle, { clearProps: 'scale,transform' });
-    }
-    var H = vh();
-    var L = railTravel();
-    var sText = 0.7 * H;     /* v1: 1.5 */
-    var sCurtain = 0.6 * H;  /* v1: 1.0 */
-    var sX = 1.0 * L;      /* v1: 1.5; four houses already make a long rail */
-    railTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: rail, start: 'top top', end: '+=' + (sText + sCurtain + sX),
-        pin: true, scrub: SCRUB, invalidateOnRefresh: true, refreshPriority: 5
-      }
-    });
-    var rt = railType();
-    railTl.fromTo(railTitle, { scale: 1 }, { scale: rt.settled / rt.grown, ease: 'none', duration: 0.5 * sText }, 0);
-    var tCurtain = 0.5 * sText;
-    railTl.to(curtainRects[2], { attr: { width: 0 }, ease: 'none', duration: 0.5 * sCurtain }, tCurtain);
-    railTl.to(curtainRects[1], { attr: { width: 0 }, ease: 'none', duration: 0.75 * sCurtain }, tCurtain);
-    railTl.to(curtainRects[0], { attr: { width: 0 }, ease: 'none', duration: 1.0 * sCurtain }, tCurtain);
-    var tX = tCurtain + 0.3 * sCurtain;
-    railTl.to(railContainer, { x: -L, ease: 'none', duration: sX }, tX);
-    railTl.to(railTitleWrap, { x: L, ease: 'none', duration: sX }, tX);
-    var tWipe = tX + 0.35 * sX;
-    railTl.to(railBehind, { clipPath: 'inset(0% 100% 0% 0%)', ease: 'none', duration: 0.45 * sX }, tWipe);
-    railTl.to(railOverlay, { opacity: 0.4, ease: 'none', duration: 0.45 * sX }, tWipe);
-    /* the title rides with the camera; it leaves before the closing quote
-       arrives so the two never sit on top of each other */
-    railTl.fromTo(railTitleWrap, { opacity: 1 }, { opacity: 0, ease: 'none', duration: 0.12 * sX }, tX + 0.72 * sX);
-  }
-  gsap.set(railOverlay, { opacity: 0.12 });
-  buildRail();
 
   /* ---------- the road draws itself; the pulse rides it ----------
      The svg box has the road's own aspect, so a viewBox point maps to a
@@ -626,14 +497,14 @@
     onUpdate: function () { flown.style.strokeDashoffset = String(flownLen * (1 - prog.p)); placeIndicator(); }
   });
 
-  /* ---------- resize: rebuild the rail, then refresh ---------- */
+  /* ---------- resize: refresh the triggers ---------- */
   var rto, lastW = window.innerWidth;
   window.addEventListener('resize', function () {
     /* on touch only a WIDTH change is a real resize (URL bar changes height) */
     if (isTouch && window.innerWidth === lastW) return;
     lastW = window.innerWidth;
     clearTimeout(rto);
-    rto = setTimeout(function () { buildRailGrow(); buildRail(); ScrollTrigger.refresh(); }, 250);
+    rto = setTimeout(function () { ScrollTrigger.refresh(); }, 250);
   });
   window.addEventListener('load', function () { ScrollTrigger.refresh(); });
 })();
