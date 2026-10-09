@@ -54,7 +54,7 @@ html.lenis, html.lenis body { height: auto; }
 
 /* body holds the page ink permanently (Safari tints chrome from it); the
    page itself paints on main */
-html, body { background-color: var(--chalk); }
+html, body { background-color: var(--deep); }
 body {
   color: var(--ink);
   font-family: var(--font-sans); font-size: 1rem;
@@ -69,7 +69,6 @@ img { display: block; max-width: 100%; height: auto; }
 figure { margin: 0; }
 a, button { touch-action: manipulation; }
 :focus-visible { outline: 2px solid var(--river); outline-offset: 3px; }
-[id] { scroll-margin-top: 5.75rem; }
 /* tabbing into the form must never land a field under the fixed header */
 html { scroll-padding-top: 5.75rem; }
 
@@ -408,6 +407,7 @@ body[data-nav-theme="hero"] .nav-logo img { opacity: 0; visibility: hidden; }
 .waypoint_card.is-tall { aspect-ratio: 4 / 5; }
 .waypoint_card img { width: 100%; height: 100%; object-fit: cover; }
 .journey_data { padding: 4rem 0 0; }
+.journey_data.container-large { max-width: none; }
 .journey_data ul { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; padding-bottom: 9rem; }
 .journey_data li { display: flex; flex-direction: column; gap: .5rem; border-top: 1px solid var(--hairline); padding-top: 1.4rem; }
 .journey_data .data-num { font-size: 2.75rem; }
@@ -486,8 +486,8 @@ body[data-nav-theme="hero"] .nav-logo img { opacity: 0; visibility: hidden; }
 .awning { display: none; }
 .nav-burger, .menu-panel { display: none; }
 @media (max-width: 768px) {
-  [id] { scroll-margin-top: 4.75rem; }
-  .awning { display: block; position: sticky; top: -100px; height: 106px; z-index: 140; background: var(--deep); pointer-events: none; }
+  html { scroll-padding-top: 4.75rem; }
+  .awning { display: block; position: sticky; top: -62px; height: 4rem; z-index: 140; background: var(--deep); pointer-events: none; }
   #nav, body[data-nav-theme="bar"] #nav {
     height: 4rem; z-index: 150; color: #fff;
     background-color: rgba(20,26,29,.88); border-bottom: 1px solid rgba(233,237,236,.12);
@@ -548,9 +548,9 @@ body[data-nav-theme="hero"] .nav-logo img { opacity: 0; visibility: hidden; }
   .r-h2 { font-size: 2.6rem; }
   .r-heading { margin-bottom: 2.2rem; }
 
-  .hero { height: 130svh; }
+  .hero { height: 112svh; }
   /* the awning sits above the hero in flow: the first screen is what is left */
-  .hero_wrapper, .clouds-overlay_wrap, .mist-transition_image-container { height: calc(100svh - 106px); }
+  .hero_wrapper, .clouds-overlay_wrap, .mist-transition_image-container { height: calc(100svh - 4rem); }
   .hero_content { padding: 0 1rem 1.6rem; }
   .hero_title { font-size: 7.5rem; }
   .hero_foot { flex-direction: column; align-items: flex-start; gap: .9rem; }
@@ -577,7 +577,7 @@ body[data-nav-theme="hero"] .nav-logo img { opacity: 0; visibility: hidden; }
   .r-feature_copy { max-width: none; }
   .r-feature_b { margin-top: 2.5rem; }
 
-  [id] { scroll-margin-top: 4.75rem; }
+  html { scroll-padding-top: 4.75rem; }
   .journey_thread { --thread-h: 34rem; height: auto; margin-bottom: 1rem; }
   .thread-svg_wrap { position: relative; left: auto; top: auto; height: var(--thread-h); margin: 0 auto 3.5rem; transform: none; }
   .route-stop::after { content: attr(data-label); position: absolute; right: calc(100% + .6rem); top: 50%; transform: translateY(-50%); white-space: nowrap; font: 500 .875rem/1 var(--font-sans); color: var(--ink); }
